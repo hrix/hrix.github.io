@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>最近のインフラエンジニアの仕事 | Hrix.GitHub.io</title>
+  <meta name="description" content="my technical portfolio" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+  <meta name="generator" content="Hrix.GitHub.io">
+
+  
+  
+  
+
+  
+</head>
+
+
+<body class="post-template">
+
+  <header class="site-head"  style="background-image: url(//blog.ghost.org/content/images/2013/Nov/cover.png)" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">Hrix.GitHub.io</h1>
+            <h2 class="blog-description">my technical portfolio</h2>
+        </div>
+    </div>
+</header>
+  
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2014-11-12T06:58:45.000Z" itemprop="datePublished">
+          Nov 12 2014
+      </time>
+    
+</span>
+    <h1 class="post-title">最近のインフラエンジニアの仕事</h1>
+    <section class="post-content">
+      <p>Web制作の会社のプロダクト部の平井です。部では二名いるインフラ担当の一人です</p>
+<p>インフラ担当って何をやっているのか？　少し分かりにくいのと、新しいことも取り入れながらやっていっていますので、仕事のご紹介したいと思います。</p>
+<h2 id="インフラエンジニアとは？">インフラエンジニアとは？</h2>
+<p>仕事として分けると大きく二つ、</p>
+<ul>
+<li>サーバ構築</li>
+<li>日々の運用<br>があります。<br>前者は、新しいサーバの立ち上げ、後者は、稼働中のサーバの監視、メンテナンス、トラブル対応、セキュリティ対策になります</li>
+</ul>
+<p>今までこれらを手を動かして作業している部分が大きかったのですが、少しづつプログラム開発のようなコード化を進めていっているのでそちらを紹介します。</p>
+<h2 id="インフラのコード化ついて">インフラのコード化ついて</h2>
+<p>以前、もう一人のインフラ担当が以下のような事例紹介を発表しました。</p>
+<blockquote>
+<p>インフラ構築の自動化・量産化。e-Agencyのクラウドプロダクト部における Chef 導入事例を紹介<br><a href="http://www.e-agency.co.jp/column/20140724.html" target="_blank" rel="external">http://www.e-agency.co.jp/column/20140724.html</a>  </p>
+</blockquote>
+<p>どれくらい大変なのか、その後どのように実践していったか、途中経過をお知らせします。</p>
+<h3 id="コード化の実践状況">コード化の実践状況</h3>
+<p> 以前の手作業と、コード化作業との比較ですが、以下のような特徴があり、インフラチームのエンジニアと情報共有がグンと進んで来ているのを実感できています。</p>
+<ul>
+<li>一度作った手順（レシピ）をリポジトリ（Githubなど）に置いて再利用ができる</li>
+<li>どういう設定をしたか、いちいちサーバに入って確認しなくてよい（記憶に頼らなくてよい、メモの漏れも気にしなくて良い）といったメリットがあります。反面</li>
+<li>レシピを書かないといけないので、最初は手で立ち上げるよりかは時間がかかる。</li>
+</ul>
+<p>「サーバ構築」を新規で行う場合は原則、Chefで構築したものを投入するようにしています。<br>具体的には主にミドルウエア（Apache, Nginx, MySQL, Ruby, PHPなど）のインストールを今まで手作業でやっていたものをChefに置き換えています。  </p>
+<p>「日々の運用」の監視部分はNagios, Muninといったツールをカスタマイズして使っています。これらの設定ファイルはGithubで履歴管理をしています。またときどき発生するログインしてメンテナンスする場合です。サーバ台数が100台以上になってきて、こちらも手作業が辛くなってきているので、ansibleというツールを使っています。こちらも手順がコード化できます。<br>ansibleはchefとできることがかぶるツールではあるのですが、Chefと違って手作業でインストールしたサーバに対しても簡単に適用できるということで、既存のサーバも含めてやる作業に使っています。</p>
+<ul>
+<li>Chefはきちんと整理して共有しやすくしてくれるツール。ansibleは運用を楽にしてくれるツールという使い分けになります。</li>
+<li>手でも同じことをやったことのある経験があった方が、これらのツールになじみやすいと思います。（いざというとき手でも対応できますし）</li>
+</ul>
+<h3 id="コード化のこれから">コード化のこれから</h3>
+<p>　インフラ業務をプログラマと同じように全てコード化できると、開発と運用がより近づき、今までよりレベルの上がった世界にいけると感じています。</p>
+<p>　しかし上記以外にもまだコード化に手をつけられていない部分があります。</p>
+<h3 id="コード化できていない部分">コード化できていない部分</h3>
+<p>　サーバ構築の初期のマシン構築（サーバの起動、OSインストール、ネットワークの設定など）をコード化するにはいくつか、課題があります。</p>
+<p>　まず、我々はサーバベンダーの選定はどこかに固定はしていません。固定するとコード化はしやすくなりますが、それよりもサーバの種類によってベンダーも使い分け（コーヒーで言うとブレンド）のメリットを感じています。</p>
+<ul>
+<li>クラウド→これがメインになりつつあります</li>
+<li>VPS→テスト、監視用サーバなどクリティカルではないもの（安く済ませられるというメリット）</li>
+<li>専用サーバ→クリティカルなもの、特殊な設定が必要なもの</li>
+<li>オンプレミス（ラック借り）→最近はなくなりつつあります<br>を場所に応じて使い分けています。<br>　DNSのレコード管理はDNSのAWSのRoute53を使えば、比較的簡単にできますが上記と関連があるのであえてまだやっていません。</li>
+</ul>
+<p>　またトラブル対応やセキュリティ対策、インフラのテストもこれから改善していきたい課題になります。</p>
+<h3 id="まとめ">まとめ</h3>
+<p>　インフラチームも開発と一緒になって生産性を上げていきたいと思っています。<br>　何となくでも理解していただけると幸いです。</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>Sumito Hirai</h4>
+    <p>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://hrix.GitHub.io/2014/11/12/about-infrastructure-engineering/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://hrix.GitHub.io/2014/11/12/about-infrastructure-engineering/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://hrix.GitHub.io/2014/11/12/about-infrastructure-engineering/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+</nav>
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+</div>
+</main>
+
+
+  
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">Hrix.GitHub.io</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1865444-17']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>
