@@ -13,7 +13,7 @@ language: Japanese
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://hrix.GitHub.io
-root: /
+root: /public/
 permalink: :year/:month/:day/:title/
 tag_dir: tags
 archive_dir: archives
