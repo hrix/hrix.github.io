@@ -40,6 +40,33 @@
   <article class="post">
     <header class="post-header">
       <span class="post-meta">
+      <time datetime="2015-03-05T01:18:29.000Z" itemprop="datePublished">
+          3月 5 2015
+      </time>
+    
+</span>
+      <h2 class="post-title"><a href="/public/2015/03/05/SSLの脆弱性FREAK最低限の確認/">SSLの脆弱性FREAK最低限の確認</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        SSLの深刻な脆弱性「FREAK」というのが話題になっています。対策できていない場合、SSL通信が乗っ取られる危険があるので関係するWebサーバはチェックしておくとよいです。
+これのチェック方法・対応ですがCentOS6/Apacheの組み合わせであれば、以下のような対策が考えられます。
+①適当なサーバから問題の暗号形式になっていないかチェック
+1$ openssl s_client -connect [対象のドメイン]:443 -ci
+      
+      </p>
+      
+      <p>
+          <a href="/public/2015/03/05/SSLの脆弱性FREAK最低限の確認/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
       <time datetime="2015-03-03T10:00:42.000Z" itemprop="datePublished">
           3月 3 2015
       </time>
