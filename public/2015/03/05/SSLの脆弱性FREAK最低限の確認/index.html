@@ -1,145 +1,220 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta charset="utf-8">
+  
   <title>SSLの脆弱性FREAK最低限の確認 | Hrix.carrier</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" type="text/css" href="/public/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
-
-  <meta name="generator" content="Hrix.carrier">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SSLの深刻な脆弱性「FREAK」というのが話題になっています。対策できていない場合、SSL通信が乗っ取られる危険があるので関係するWebサーバはチェックしておくとよいです。 これのチェック方法・対応ですがCentOS6/Apacheの組み合わせであれば、以下のような対策が考えられます。 ①適当なサーバから問題の暗号形式になっていないかチェック1$ openssl s_client -connec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSLの脆弱性FREAK最低限の確認">
+<meta property="og:url" content="http://hrix.GitHub.io/2015/03/05/SSLの脆弱性FREAK最低限の確認/index.html">
+<meta property="og:site_name" content="Hrix.carrier">
+<meta property="og:description" content="SSLの深刻な脆弱性「FREAK」というのが話題になっています。対策できていない場合、SSL通信が乗っ取られる危険があるので関係するWebサーバはチェックしておくとよいです。 これのチェック方法・対応ですがCentOS6/Apacheの組み合わせであれば、以下のような対策が考えられます。 ①適当なサーバから問題の暗号形式になっていないかチェック1$ openssl s_client -connec">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2017-09-15T06:26:30.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSLの脆弱性FREAK最低限の確認">
+<meta name="twitter:description" content="SSLの深刻な脆弱性「FREAK」というのが話題になっています。対策できていない場合、SSL通信が乗っ取られる危険があるので関係するWebサーバはチェックしておくとよいです。 これのチェック方法・対応ですがCentOS6/Apacheの組み合わせであれば、以下のような対策が考えられます。 ①適当なサーバから問題の暗号形式になっていないかチェック1$ openssl s_client -connec">
+  
+    <link rel="alternate" href="/atom.xml" title="Hrix.carrier" type="application/atom+xml">
   
   
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  
 </head>
 
-
-<body class="post-template">
-
-  <header class="site-head"  style="background-image: url(//blog.ghost.org/content/images/2013/Nov/cover.png)" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/public/"><img src="//pbs.twimg.com/profile_images/341135326/S1100.png" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">Hrix.carrier</h1>
-            <h2 class="blog-description"></h2>
-        </div>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hrix.carrier</a>
+      </h1>
+      
     </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hrix.GitHub.io"></form>
+      </div>
+    </div>
+  </div>
 </header>
+      <div class="outer">
+        <section id="main"><article id="post-SSLの脆弱性FREAK最低限の確認" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/05/SSLの脆弱性FREAK最低限の確認/" class="article-date">
+  <time datetime="2015-03-05T01:18:29.000Z" itemprop="datePublished">2015-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSLの脆弱性FREAK最低限の確認
+    </h1>
   
 
-<main class="content" role="main">
-  <article class="post">
-    <span class="post-meta">
-      <time datetime="2015-03-05T01:18:29.000Z" itemprop="datePublished">
-          3月 5 2015
-      </time>
+      </header>
     
-</span>
-    <h1 class="post-title">SSLの脆弱性FREAK最低限の確認</h1>
-    <section class="post-content">
-      <p>SSLの深刻な脆弱性「FREAK」というのが話題になっています。<br>対策できていない場合、SSL通信が乗っ取られる危険があるので関係するWebサーバはチェックしておくとよいです。</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SSLの深刻な脆弱性「FREAK」というのが話題になっています。<br>対策できていない場合、SSL通信が乗っ取られる危険があるので関係するWebサーバはチェックしておくとよいです。</p>
 <p>これのチェック方法・対応ですが<br>CentOS6/Apacheの組み合わせであれば、以下のような対策が考えられます。</p>
-<h3 id="①適当なサーバから問題の暗号形式になっていないかチェック">①適当なサーバから問題の暗号形式になっていないかチェック</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="tag">openssl</span> <span class="tag">s_client</span> <span class="tag">-connect</span> <span class="attr_selector">[対象のドメイン]</span><span class="pseudo">:443</span> <span class="tag">-cipher</span> <span class="tag">EXPORT</span></div></pre></td></tr></table></figure>
-
+<h3 id="①適当なサーバから問題の暗号形式になっていないかチェック"><a href="#①適当なサーバから問題の暗号形式になっていないかチェック" class="headerlink" title="①適当なサーバから問題の暗号形式になっていないかチェック"></a>①適当なサーバから問題の暗号形式になっていないかチェック</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ openssl s_client -connect [対象のドメイン]:443 -cipher EXPORT</div></pre></td></tr></table></figure>
 <p>※結果</p>
 <blockquote>
 <p>handshake failureとでて15行ぐらいで終わったら問題なし、<br>そうではなく、たくさん暗号が出て<br>Server Temp Key: RSA, 512 bits<br>など出たら、問題ありです。<br>※Apacheの場合ssl.conf（CentOS6）ではデフォルト<br>SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:+LOW<br>となってあってこれが効いていれば問題なしですが、<br>設定の仕方によって無効になってしまっている場合もあるので<br>SSLCipherSuiteを有効になるよう調整するなど確認が必要です。</p>
 </blockquote>
-<h3 id="②（CentOS6/7）2015/1/21にopensslのモジュールアップデートが出ているのでアップデートする">②（CentOS6/7）2015/1/21にopensslのモジュールアップデートが出ているのでアップデートする</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># yum update openssl</span></div></pre></td></tr></table></figure>
-
+<h3 id="②（CentOS6-7）2015-1-21にopensslのモジュールアップデートが出ているのでアップデートする"><a href="#②（CentOS6-7）2015-1-21にopensslのモジュールアップデートが出ているのでアップデートする" class="headerlink" title="②（CentOS6/7）2015/1/21にopensslのモジュールアップデートが出ているのでアップデートする"></a>②（CentOS6/7）2015/1/21にopensslのモジュールアップデートが出ているのでアップデートする</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum update openssl</div></pre></td></tr></table></figure>
 <ul>
 <li>①が問題なければ②はそれほど急がなくてもよいかと。</li>
 <li>以下がまとまっていて分かりやすいかと思いました。<br><a href="http://d.hatena.ne.jp/Kango/20150304/1425448983" target="_blank" rel="external">http://d.hatena.ne.jp/Kango/20150304/1425448983</a></li>
 </ul>
 
-    </section>
-    <footer class="post-footer">
-      <section class="author">
-    <h4>Sumito Hirai</h4>
-    <p>An infrastructure engineer of inetrnet. https://twitter.com/moro40</p>
-</section>
-      <section class="share">
-    <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://hrix.GitHub.io/public/2015/03/05/SSLの脆弱性FREAK最低限の確認/"
-       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <span class="hidden">Twitter</span>
-    </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://hrix.GitHub.io/public/2015/03/05/SSLの脆弱性FREAK最低限の確認/"
-       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <span class="hidden">Facebook</span>
-    </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://hrix.GitHub.io/public/2015/03/05/SSLの脆弱性FREAK最低限の確認/"
-       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <span class="hidden">Google+</span>
-    </a>
-</section>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hrix.GitHub.io/2015/03/05/SSLの脆弱性FREAK最低限の確認/" data-id="cj7lj03iz00001iz5oj160dba" class="article-share-link">Share</a>
+      
+      
     </footer>
-  </article>
-  <nav class="pagination" role="pagination">
+  </div>
+  
     
-    <a class="newer-posts" href="/public/2015/04/12/about-infrastructure-engineering/">
-        ← 最近のインフラエンジニアの仕事
+<nav id="article-nav">
+  
+    <a href="/2015/04/12/about-infrastructure-engineering/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          最近のインフラエンジニアの仕事
+        
+      </div>
     </a>
-    
-    <span class="page-number">•</span>
-    
-    <a class="older-posts" href="/public/2015/03/03/heartbeatなどでどのサーバにVIPがあるかチェックするnagiosプラグインを公開しました/">
-        heartbeatなどでどのサーバにVIPがあるかチェックするnagiosプラグインを公開しました →
+  
+  
+    <a href="/2015/03/03/heartbeatなどでどのサーバにVIPがあるかチェックするnagiosプラグインを公開しました/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">heartbeatなどでどのサーバにVIPがあるかチェックするnagiosプラグインを公開しました</div>
     </a>
-    
+  
 </nav>
-  <!--
-<div id="comment" class="comments-area">
-    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
 
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
     
-</div>
--->
 
-</main>
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">4月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">3月 2015</a></li></ul>
+    </div>
+  </div>
 
 
   
-<footer class="site-footer">
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/04/13/this-site-s-recipe/">this site&#39;s recipe</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/13/history/">History</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/12/about-infrastructure-engineering/">最近のインフラエンジニアの仕事</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/05/SSLの脆弱性FREAK最低限の確認/">SSLの脆弱性FREAK最低限の確認</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/03/heartbeatなどでどのサーバにVIPがあるかチェックするnagiosプラグインを公開しました/">heartbeatなどでどのサーバにVIPがあるかチェックするnagiosプラグインを公開しました</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
   
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/public/">Hrix.carrier</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Sumito Hirai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
   </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<script type="text/javascript" src="/public/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/public/js/index.js"></script>
-
-
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-1865444-17']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/js/script.js"></script>
 
+  </div>
 </body>
 </html>
