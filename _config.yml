@@ -12,8 +12,8 @@ timezone: Japan
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://hrix.GitHub.io
-root: /
+url: http://hrix.github.io
+root: /public/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
