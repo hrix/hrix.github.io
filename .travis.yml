@@ -11,6 +11,10 @@ node_js:
   - "8"
   - "node"
 
+install:
+- npm install -g hexo
+- npm install
+
 after_script:
   - hexo generate
 
