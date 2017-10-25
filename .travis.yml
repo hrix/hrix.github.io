@@ -1,24 +1,17 @@
 language: node_js
-
 sudo: false
-
 cache:
   apt: true
   directories:
-    - node_modules
-
+  - node_modules
 node_js:
-  - "8"
-  - "node"
-
-install:
+- '8'
+before_install:
 - npm install -g hexo
-- npm install -g hexo-cli
 - npm install
-
-script: npm run build
-
-after_script:
-  - hexo generate
-
-dist: precise
+before_script:
+- rm -rf public
+script:
+- hexo generate
+- cd public
+  
