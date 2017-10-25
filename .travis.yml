@@ -12,7 +12,8 @@ node_js:
   - "node"
 
 install:
-- npm install -g hexo --no-optional
+- npm install -g hexo
+- npm install -g hexo-cli
 - npm install
 
 after_script:
