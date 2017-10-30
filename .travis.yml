@@ -24,7 +24,7 @@ before_script:
 - git ls-files | xargs -I {} rm -rf {}
 - popd
 script:
-- mv --force source/themes/casper/layout/casper/head.ejs themes/casper/layout/casper/head.ejs
+- \mv --force source/themes/casper/layout/casper/head.ejs themes/casper/layout/casper/head.ejs
 - hexo generate
 - cd public
 - git add -A
