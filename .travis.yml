@@ -15,7 +15,6 @@ before_install:
 - npm install hexo-renderer-ejs
 - npm install hexo-renderer-marked
 - npm install hexo-renderer-stylus
-- git clone https://github.com/kywk/hexo-theme-casper.git themes/casper
 before_script:
 - git config --global user.name 'hrix via Travis CI'
 - git config --global user.email 'hirai.sumito@gmail.com'
