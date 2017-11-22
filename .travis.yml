@@ -26,8 +26,8 @@ before_script:
 script:
 - $(npm bin)/hexo generate
 - cd public
+- cp ../misc/.travis.yml .
 - git add -A
-- cp misc/.travis.yml .
 - git commit -m 'Update'
 - '[ "$TRAVIS_BRANCH" == "hexo-shutto-trans-product" ]'
 - '[ $GH_TOKEN ]'
