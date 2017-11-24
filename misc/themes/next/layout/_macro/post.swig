@@ -378,6 +378,16 @@ try{
 } catch(err) {}
 </script>
 
+<script type="text/javascript">
+try{
+    _rcmdjp._setItemData({
+    name: '{{ post.title }}',
+    release_date: '{{ date(post.date, config.date_format) }}'
+      });
+  } catch(err) {}
+</script>
+  
+
       {% if not is_index and (post.prev or post.next) %}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
