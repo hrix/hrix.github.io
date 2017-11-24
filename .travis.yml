@@ -24,6 +24,7 @@ before_script:
 - git ls-files | xargs -I {} rm -rf {}
 - popd
 script:
+- cp ./misc//home/hirai/hrix.github.io/misc/themes/casper/layout/casper/head.ejs ./themes/casper/layout/casper/head.ejs
 - $(npm bin)/hexo generate
 - cd public
 - cp ../misc/.travis.yml .
