@@ -379,12 +379,15 @@ try{
 </script>
 
 <script type="text/javascript">
+<!--
 try{
     _rcmdjp._setItemData({
+    code: '{{ post._id }}',
     name: '{{ post.title }}',
     release_date: '{{ date(post.date, config.date_format) }}'
       });
   } catch(err) {}
+//-->
 </script>
   
 
