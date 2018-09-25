@@ -1,6 +1,4 @@
-<script data-stt-id="26" src="https://d.shutto-translation.com/trans.js"></script>
-<script type="text/javascript" src="//stg-d.rcmd.jp/hrix.github.io/item/recommend.js" charset="UTF-8"></script>
-
+<script src="https://sandbox-d.shutto-translation.com/trans.js?id=132"></script>
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
