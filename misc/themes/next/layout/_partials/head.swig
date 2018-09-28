@@ -1,4 +1,4 @@
-<script src="https://sandbox-d.shutto-translation.com/trans.js?id=132"></script>
+<script src="https://sandbox-d.shutto-translation.com/trans.js?id=2"></script>
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
