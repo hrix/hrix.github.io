@@ -1,4 +1,4 @@
-<script src="https://d.shutto-translation.com/trans.js?id=460"></script>
+<script src="https://d.shutto-translation.com/trans.js?id=553"></script>
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
