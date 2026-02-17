@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hrix.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="自社プロダクト部の平井です。インフラ担当の一人です インフラ担当って何をやっているのか？　少し分かりにくいのと、新しいことも取り入れながらやっていっていますので、仕事のご紹介したいと思います。 インフラエンジニアとは？仕事として分けると大きく二つ、  サーバ構築 日々の運用があります。前者は、インフラ設計、新しいサーバの立ち上げ、後者は、稼働中のサーバの監視、メンテナンス、トラブル対応、セキュリテ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近のインフラエンジニアの仕事">
+<meta property="og:url" content="https://hrix.github.io/2015/04/12/about-infrastructure-engineering/index.html">
+<meta property="og:site_name" content="Hrix.carrier">
+<meta property="og:description" content="自社プロダクト部の平井です。インフラ担当の一人です インフラ担当って何をやっているのか？　少し分かりにくいのと、新しいことも取り入れながらやっていっていますので、仕事のご紹介したいと思います。 インフラエンジニアとは？仕事として分けると大きく二つ、  サーバ構築 日々の運用があります。前者は、インフラ設計、新しいサーバの立ち上げ、後者は、稼働中のサーバの監視、メンテナンス、トラブル対応、セキュリテ">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2015-04-12T06:58:45.000Z">
+<meta property="article:modified_time" content="2026-02-17T22:55:03.229Z">
+<meta property="article:author" content="Sumito Hirai">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hrix.github.io/2015/04/12/about-infrastructure-engineering/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ja","comments":true,"permalink":"https://hrix.github.io/2015/04/12/about-infrastructure-engineering/","path":"2015/04/12/about-infrastructure-engineering/","title":"最近のインフラエンジニアの仕事"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>最近のインフラエンジニアの仕事 | Hrix.carrier</title>
+  
+
+
+
+
+
+
+
+<script src="https://d.shutto-translation.com/trans.js?id=80148"></script>
+
+<!--
+<script type="text/javascript" src="/2024/03/12/js/smp.js"></script>
+-->
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hrix.carrier</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="検索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%A8%E3%81%AF%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">インフラエンジニアとは？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E5%8C%96%E3%81%A4%E3%81%84%E3%81%A6"><span class="nav-number">2.</span> <span class="nav-text">インフラのコード化ついて</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%82%B3%E3%83%BC%E3%83%89%E5%8C%96%E3%81%AE%E5%AE%9F%E8%B7%B5%E7%8A%B6%E6%B3%81"><span class="nav-number">2.1.</span> <span class="nav-text">コード化の実践状況</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%82%B5%E3%83%BC%E3%83%90%E6%A7%8B%E7%AF%89"><span class="nav-number">2.2.</span> <span class="nav-text">サーバ構築</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E3%80%85%E3%81%AE%E9%81%8B%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">日々の運用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%81%9D%E3%81%AE%E4%BB%96"><span class="nav-number">2.4.</span> <span class="nav-text">その他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%82%B5%E3%83%BC%E3%83%90%E6%A7%8B%E7%AF%89%E3%82%B3%E3%83%BC%E3%83%89%E5%8C%96%E3%81%AE%E8%AA%B2%E9%A1%8C"><span class="nav-number">2.5.</span> <span class="nav-text">サーバ構築コード化の課題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%81%BE%E3%81%A8%E3%82%81"><span class="nav-number">2.6.</span> <span class="nav-text">まとめ</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Author</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://hrix.github.io/2015/04/12/about-infrastructure-engineering/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Author">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hrix.carrier">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="最近のインフラエンジニアの仕事 | Hrix.carrier">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          最近のインフラエンジニアの仕事
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">投稿日</span>
+
+      <time title="作成日：2015-04-12 15:58:45" itemprop="dateCreated datePublished" datetime="2015-04-12T15:58:45+09:00">2015-04-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">編集日</span>
+      <time title="修正日：2026-02-18 07:55:03" itemprop="dateModified" datetime="2026-02-18T07:55:03+09:00">2026-02-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>自社プロダクト部の平井です。インフラ担当の一人です</p>
+<p>インフラ担当って何をやっているのか？　少し分かりにくいのと、新しいことも取り入れながらやっていっていますので、仕事のご紹介したいと思います。</p>
+<h2 id="インフラエンジニアとは？"><a href="#インフラエンジニアとは？" class="headerlink" title="インフラエンジニアとは？"></a>インフラエンジニアとは？</h2><p>仕事として分けると大きく二つ、</p>
+<ul>
+<li>サーバ構築</li>
+<li>日々の運用<br>があります。<br>前者は、インフラ設計、新しいサーバの立ち上げ、後者は、稼働中のサーバの監視、メンテナンス、トラブル対応、セキュリティ対策になります</li>
+</ul>
+<p>今までこれらを手を動かして作業している部分が大きかったのですが、少しづつプログラム開発のようなコード化を進めていっているのでそちらを紹介します。</p>
+<h2 id="インフラのコード化ついて"><a href="#インフラのコード化ついて" class="headerlink" title="インフラのコード化ついて"></a>インフラのコード化ついて</h2><p>以前、もう一人のインフラ担当が以下のような事例紹介を発表しました。</p>
+<blockquote>
+<p>インフラ構築の自動化・量産化。e-Agencyのクラウドプロダクト部における Chef 導入事例を紹介<br><a target="_blank" rel="noopener" href="http://www.e-agency.co.jp/column/20140724.html">http://www.e-agency.co.jp/column/20140724.html</a>  </p>
+</blockquote>
+<p>どれくらい大変なのか、その後どのように実践していったか、途中経過をお知らせします。</p>
+<h3 id="コード化の実践状況"><a href="#コード化の実践状況" class="headerlink" title="コード化の実践状況"></a>コード化の実践状況</h3><p> 以前の手作業と、コード化作業との比較ですが、以下のような特徴があり、インフラチームのエンジニアと情報共有がグンと進んで来ているのを実感できています。</p>
+<ul>
+<li>一度作った手順（レシピ）をリポジトリ（Githubなど）に置いて再利用ができる</li>
+<li>どういう設定をしたか、いちいちサーバに入って確認しなくてよい（記憶に頼らなくてよい、メモの漏れも気にしなくて良い）といったメリットがあります。反面</li>
+<li>レシピを書かないといけないので、最初は手で立ち上げるよりかは時間がかかる。</li>
+</ul>
+<h3 id="サーバ構築"><a href="#サーバ構築" class="headerlink" title="サーバ構築"></a>サーバ構築</h3><p>新規でサーバを立ち上げる場合は原則、Chefで構築したものを投入するようにしています。<br>具体的には主にミドルウエア（Apache, Nginx, MySQL, Ruby, PHPなど）のインストールを今まで手作業でやっていたものをChefに置き換えています。  </p>
+<h3 id="日々の運用"><a href="#日々の運用" class="headerlink" title="日々の運用"></a>日々の運用</h3><p>監視部分はNagios, Muninといったツールをカスタマイズして使っています。これらの設定ファイルはGithubで履歴管理をしています。<br>不定期のメンテナンスでログインする場合、サーバ台数が100台以上になってきて、こちらも手作業が辛くなってきているので、ansibleというツールを使っています。こちらも手順がコード化できます。<br>ansibleはchefとかぶるツールではあるのですが、Chefと違って手作業でインストールしたサーバに対しても簡単に適用できるということで、全てのサーバに対してやる作業に使っています。</p>
+<p>Chefはきちんと整理して共有しやすくしてくれるツール。ansibleは運用を楽にしてくれるツールという使い分けになります。<br>しかし手でも同じことをやった経験があった方が、これらのツールになじみやすいと思います。</p>
+<h3 id="その他"><a href="#その他" class="headerlink" title="その他"></a>その他</h3><ul>
+<li>SSL証明書の運用<br>暗号化と身元確認をまとめてやってしまっているもの。事務手続きもあるしちょっと特殊な扱いになります。</li>
+<li>その他<br>トラブル対応やセキュリティ対策、インフラのテストもこれから改善していきたい課題になります。</li>
+</ul>
+<h3 id="サーバ構築コード化の課題"><a href="#サーバ構築コード化の課題" class="headerlink" title="サーバ構築コード化の課題"></a>サーバ構築コード化の課題</h3><p>　設計に関して、我々はサーバベンダーの選定はどこかに固定はしていません。固定するとコード化はしやすくなりますが、それよりもサーバの種類によってベンダーも使い分け（コーヒーで言うとブレンド）のメリットを感じています。運用中のアプリの造りも疎結合だったりします。</p>
+<ul>
+<li>オンプレミス（ラック借り）→最近はなくなりつつあります</li>
+<li>専用サーバ→クリティカルなもの、特殊な設定が必要なもの</li>
+<li>VPS→テスト、監視用サーバなどクリティカルではないもの（安く済ませられるというメリット）</li>
+<li>クラウド→これがメインになりつつあります</li>
+<li>その他Webサービス（AWSのS3など）<ul>
+<li>DNSのレコード管理のコード化はAWSのRoute53を使えば、比較的簡単にできるのでそろそろやりたいところです。</li>
+</ul>
+</li>
+</ul>
+<p>といった感じでサーバの役割に応じて使い分けています。<br>なので、サーバの起動、OSインストール、ネットワークの設定をどうしていくかは、これから考えていかなければいけない課題です。</p>
+<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>　インフラ業務をプログラムと同じように全てコード化できると、開発と運用がより近づき、今までよりレベルの上がった世界にいけると感じています。<br>インフラチームも開発と一緒になって生産性を上げて何かを成し遂げていきましょう。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/03/05/SSL%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7FREAK%E6%9C%80%E4%BD%8E%E9%99%90%E3%81%AE%E7%A2%BA%E8%AA%8D/" rel="prev" title="SSLの脆弱性FREAK最低限の確認">
+                  <i class="fa fa-chevron-left"></i> SSLの脆弱性FREAK最低限の確認
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/04/12/history/" rel="next" title="History">
+                  History <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Author</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
